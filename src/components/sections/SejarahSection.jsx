@@ -16,7 +16,7 @@ function SejarahSection() {
         <TabsList className="flex-wrap">
           {sejarahData.map((era) => (
             <TabsTrigger key={era.id} value={era.id}>
-              {era.judul}
+              {era.periode}
             </TabsTrigger>
           ))}
         </TabsList>
