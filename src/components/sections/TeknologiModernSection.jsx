@@ -13,9 +13,9 @@ function TeknologiModernSection() {
       </p>
 
       <Tabs defaultValue={teknologiData[0].id}>
-        <TabsList className="flex-wrap">
+        <TabsList className="w-full justify-start overflow-x-auto">
           {teknologiData.map((kategori) => (
-            <TabsTrigger key={kategori.id} value={kategori.id}>
+            <TabsTrigger key={kategori.id} value={kategori.id} className="shrink-0">
               {kategori.kategori}
             </TabsTrigger>
           ))}

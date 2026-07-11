@@ -26,14 +26,14 @@ function Hero() {
           Dari jejak Kerajaan Tarumanagara hingga kota modern penyangga
           Jakarta — kenali Bekasi lebih dekat.
         </p>
-        <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
-          <Button size="lg" render={<Link href="/#sejarah" />}>
+        <div className="mt-8 flex flex-row items-center justify-center gap-3 sm:flex-row">
+          <Button size="lg" className="md:w-50" render={<Link href="/#sejarah" />}>
             Mulai Jelajahi
           </Button>
           <Button
             size="lg"
             variant="outline"
-            className="border-white text-black hover:bg-white/10"
+            className="border-white text-black hover:bg-white/10 md:w-50"
             render={<Link href="/#peta" />}
           >
             Lihat Peta

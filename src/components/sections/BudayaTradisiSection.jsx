@@ -13,9 +13,11 @@ function BudayaSection() {
       </p>
 
       <Tabs defaultValue={budayaData[0].id}>
-        <TabsList className="flex-wrap">
+        {/* nanti di tambah kalau sudah npm install -D tailwind-scrollbar-hide (scrollbar-hide) */}
+
+        <TabsList className="w-full justify-start overflow-x-auto">
           {budayaData.map((kategori) => (
-            <TabsTrigger key={kategori.id} value={kategori.id}>
+            <TabsTrigger key={kategori.id} value={kategori.id} className="shrink-0">
               {kategori.kategori}
             </TabsTrigger>
           ))}

@@ -13,9 +13,9 @@ function SejarahSection() {
       </p>
 
       <Tabs defaultValue={sejarahData[0].id}>
-        <TabsList className="flex-wrap">
+        <TabsList className="w-full justify-start overflow-x-auto">
           {sejarahData.map((era) => (
-            <TabsTrigger key={era.id} value={era.id}>
+            <TabsTrigger key={era.id} value={era.id} className="shrink-0">
               {era.periode}
             </TabsTrigger>
           ))}
