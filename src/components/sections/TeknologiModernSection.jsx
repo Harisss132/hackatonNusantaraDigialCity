@@ -1,67 +1,98 @@
 import { Link } from "react-router-dom";
-import { Tabs, TabsList, TabsTrigger, TabsContent } from "../ui/tabs";
 import { Card } from "../ui/card";
 import { Button } from "../ui/button";
-import { teknologiData } from "../../data/teknologi";
+import { teknologiData } from "@/data/teknologi"; 
 
-function TeknologiModernSection() {
+function TeknologiSection() {
   return (
-    <section id="teknologi" className="scroll-mt-20 px-4 py-16 md:px-8">
-      <h2 className="mb-2 text-2xl font-bold md:text-3xl">Teknologi & Potensi Modern Bekasi</h2>
-      <p className="mb-8 text-muted-foreground">
+    <section 
+      id="budaya" 
+      className="scroll-mt-20 bg-[#F9F6F0] text-[#1A1A1A] px-6 py-20 md:px-8 font-sans border-t border-gray-200/40"
+    >
+      <div className="mx-auto max-w-6xl">
+        
+        {/* Header Section dengan Gaya Editorial Minimalis */}
+        <div className="mb-14 text-center md:text-left max-w-2xl">
+          <span className="inline-block bg-[#E5BA73]/30 text-[#C58940] text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-3">
+            🏭 Modern Bekasi
+          </span>
+          <h2 className="font-serif text-3xl font-bold tracking-tight md:text-5xl text-[#1A1A1A]">
+            Teknologi & <br />
+            <span className="text-[#C58940] italic">Potensi Bekasi</span>
+          </h2>
+          <p className="mt-4 text-sm text-gray-600 leading-relaxed md:text-base">
         Dari kawasan industri terbesar se-Asia Tenggara hingga transformasi smart city — Bekasi menuju masa depan digital.
-      </p>
+          </p>
+        </div>
 
-      <Tabs defaultValue={teknologiData[0].id}>
-        <TabsList className="w-full justify-start overflow-x-auto">
+        {/* Grid Editorial - Selaras dengan Gaya Portal Shopping Brugge */}
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {teknologiData.map((kategori) => (
-            <TabsTrigger key={kategori.id} value={kategori.id} className="shrink-0">
-              {kategori.kategori}
-            </TabsTrigger>
-          ))}
-        </TabsList>
+            <Card 
+              key={kategori.id} 
+              className="flex flex-col bg-transparent border-0 shadow-none rounded-none overflow-hidden group/card"
+            >
+              {/* Bagian Visual Frame Foto (Tanpa Border Card Kaku) */}
+              {kategori.gambar && (
+                <div className="relative w-full aspect-4/3 rounded-2xl overflow-hidden bg-gray-200 border border-white shadow-md mb-5">
+                  <img
+                    src={kategori.gambar.src}
+                    alt={kategori.gambar.alt}
+                    className="w-full h-full object-cover grayscale-15 group-hover/card:grayscale-0 group-hover/card:scale-105 transition-all duration-700 ease-out"
+                    loading="lazy"
+                  />
+                  {/* Label Sumber Gambar Minimalis */}
+                  <div className="absolute bottom-2 left-3 bg-black/40 backdrop-blur-sm text-[10px] text-white/90 px-2 py-0.5 rounded-md">
+                    Sumber: {kategori.gambar.sumber}
+                  </div>
+                </div>
+              )}
 
-        {teknologiData.map((kategori) => (
-          <TabsContent key={kategori.id} value={kategori.id} className="mt-6">
-            <Card className="p-6">
-              <div className="grid gap-6 md:grid-cols-2">
-                {kategori.gambar && (
-                  <figure>
-                    <div className="aspect-4/3 w-full overflow-hidden rounded-lg bg-muted">
-                      <img
-                        src={kategori.gambar.src}
-                        alt={kategori.gambar.alt}
-                        className="h-full w-full object-cover"
-                        loading="lazy"
-                      />
-                    </div>
-                    <figcaption className="mt-1 text-xs text-muted-foreground">
-                      Sumber: {kategori.gambar.sumber} ({kategori.gambar.lisensi})
-                    </figcaption>
-                  </figure>
-                )}
-                <div className={!kategori.gambar ? "md:col-span-2" : ""}>
-                  <p className="mb-1 text-sm font-medium text-primary">{kategori.kategori}</p>
-                  <h3 className="mb-2 text-lg font-semibold">{kategori.judul}</h3>
-                  <p className="mb-4 text-foreground">{kategori.ringkasan}</p>
-                  <ul className="list-disc space-y-1 pl-5 text-sm text-muted-foreground">
-                    {kategori.poin.map((poin, i) => (
-                      <li key={i}>{poin}</li>
-                    ))}
-                  </ul>
+              {/* Bagian Informasi Teks */}
+              <div className="flex-1 flex flex-col mx-3 space-y-2">
+                {/* Meta Kategori di Atas Judul */}
+                <span className="font-mono text-xs font-bold uppercase tracking-wider text-[#C58940]">
+                  {kategori.kategori}
+                </span>
+                
+                {/* Judul Ragam Budaya */}
+                <h3 className="font-serif text-xl font-bold tracking-tight text-[#1A1A1A] group-hover/card:text-[#C58940] transition-colors duration-300">
+                  {kategori.judul}
+                </h3>
+                
+                {/* Ringkasan Singkat Kebudayaan */}
+                <p className="text-sm leading-relaxed text-gray-500 line-clamp-4 flex-1">
+                  {kategori.ringkasan}
+                </p>
+
+                {/* Indikator Tautan Eksplorasi Minimalis */}
+                <div className="pt-2">
+                  <Link 
+                    to="/budaya" 
+                    className="inline-flex items-center text-xs font-bold uppercase tracking-wider text-[#1A1A1A] hover:text-[#C58940] transition-colors"
+                  >
+                    Pelajari Tradisi →
+                  </Link>
                 </div>
               </div>
             </Card>
-          </TabsContent>
-        ))}
-      </Tabs>
-      <div className="mt-6 text-center">
-        <Button size="lg" render={<Link to="/teknologi" />}>
-          Baca Teknologi Lengkap
-        </Button>
+          ))}
+        </div>
+
+        {/* Tombol Aksi Akhir ke Halaman Detail Budaya */}
+        <div className="mt-16 text-center">
+          <Button 
+            size="lg" 
+            className="bg-[#1A1A1A] text-white hover:bg-[#C58940] transition-colors rounded-xl px-8 h-12 shadow-md shadow-black/5"
+            render={<Link to="/budaya" />}
+          >
+            Lihat Budaya Lengkap
+          </Button>
+        </div>
+
       </div>
     </section>
   );
 }
 
-export default TeknologiModernSection;
+export default TeknologiSection;

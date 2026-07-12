@@ -9,7 +9,7 @@ export const kulinerData = [
   // === HIDANGAN BERAT IKONIK ===
   {
     id: "gabus-pucung",
-    nama: "Sayur/Sop Gabus Pucung",
+    nama: "Gabus Pucung",
     kategori: "hidangan-berat",
     deskripsi:
       "Kuliner paling ikonik dan dianggap paling otentik khas Bekasi. Ikan gabus dimasak dalam kuah hitam pekat berbahan dasar kluwek, dipadu lengkuas, serai, daun salam, dan bawang — menghasilkan rasa gurih sedikit pedas.",
@@ -208,7 +208,7 @@ export const kulinerData = [
     nama: "ES Durian Patal",
     kategori: "warung-legendaris",
     deskripsi: "Es Durian Patal adalah penutup yang sempurna. Daging duriannya asli dan melimpah, dipadu dengan es serut dan susu cokelat",
-    lokasi: 'Jl. KH Agus Salim (Depan RS Mekar Sari).',
+    lokasi: 'Jl. KH Agus Salim (Depan RS Mekar Sari)',
     sejak: "1991",
     gambar: {
       src: "/images/kuliner/es_durian_patal.png",
@@ -223,7 +223,7 @@ export const kulinerData = [
     nama: "Pancong Balap",
     kategori: "warung-legendaris",
     deskripsi: "Kue pancong tradisional dengan topping modern seperti keju, cokelat, hingga greentea.",
-    lokasi: 'Jl. KH Agus Salim No.1, Bekasi Jaya.',
+    lokasi: 'Jl. KH Agus Salim No.1, Bekasi Jaya',
     sejak: '1980an',
     gambar: {
       src: "/images/kuliner/warung_pancong.png",
