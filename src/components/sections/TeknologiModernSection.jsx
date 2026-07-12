@@ -71,7 +71,7 @@ function TeknologiSection() {
                     to="/budaya" 
                     className="inline-flex items-center text-xs font-bold uppercase tracking-wider text-[#1A1A1A] hover:text-[#C58940] transition-colors"
                   >
-                    Pelajari Tradisi →
+                    Selengkapnya →
                   </Link>
                 </div>
               </div>
