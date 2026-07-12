@@ -8,7 +8,7 @@ import {
   CarouselNext,
 } from "../ui/carousel";
 
-function KulinerSection() {
+function DestinasiWisataSection() {
   const { activeFilter, setActiveFilter, filteredItems } = useFilter(
     destinasiData,
     "kategori"
@@ -73,7 +73,7 @@ function KulinerSection() {
                     {/* Kolom Informasi Teks Kiri (7 Kolom - Lebih Dominan) */}
                     <div className="mx-3 md:col-span-7 space-y-4 text-left">
                       <span className="font-mono text-xs font-bold uppercase tracking-wider text-[#C58940]">
-                        {item.kategori || "Kuliner Pilihan"}
+                        {item.kategori || "Wisata Pilihan"}
                       </span>
                       
                       <h3 className="font-serif text-2xl font-bold tracking-tight text-[#1A1A1A] md:text-4xl">
@@ -146,4 +146,4 @@ function KulinerSection() {
   );
 }
 
-export default KulinerSection;
+export default DestinasiWisataSection;

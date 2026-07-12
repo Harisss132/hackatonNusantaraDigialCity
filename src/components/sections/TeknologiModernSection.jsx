@@ -6,7 +6,7 @@ import { teknologiData } from "@/data/teknologi";
 function TeknologiSection() {
   return (
     <section 
-      id="budaya" 
+      id="teknologi" 
       className="scroll-mt-20 bg-[#F9F6F0] text-[#1A1A1A] px-6 py-20 md:px-8 font-sans border-t border-gray-200/40"
     >
       <div className="mx-auto max-w-6xl">
@@ -68,7 +68,7 @@ function TeknologiSection() {
                 {/* Indikator Tautan Eksplorasi Minimalis */}
                 <div className="pt-2">
                   <Link 
-                    to="/budaya" 
+                    to="/teknologi" 
                     className="inline-flex items-center text-xs font-bold uppercase tracking-wider text-[#1A1A1A] hover:text-[#C58940] transition-colors"
                   >
                     Selengkapnya →
@@ -84,9 +84,9 @@ function TeknologiSection() {
           <Button 
             size="lg" 
             className="bg-[#1A1A1A] text-white hover:bg-[#C58940] transition-colors rounded-xl px-8 h-12 shadow-md shadow-black/5"
-            render={<Link to="/budaya" />}
+            render={<Link to="/teknologi" />}
           >
-            Lihat Budaya Lengkap
+            Lihat Teknologi Lengkap
           </Button>
         </div>
 
